@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+}
+
+group 'com.test'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+task run(type: JavaExec) {
+  classpath sourceSets.main.runtimeClasspath
+  main = "com.test.predictor.PicoyPlacaPredictor"
+  args ""
+}

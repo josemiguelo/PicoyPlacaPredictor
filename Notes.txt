@@ -1,0 +1,74 @@
+=========================
+"PICO Y PLACA" predictor.
+=========================
+
+INPUTS
+    a license plate number (the full number, not the last digit),
+    a date (as a String),
+    a time
+
+OUTPUT
+    whether or not that car can be on the road.
+
+
+FUNCTIONAL ANALYSIS
+
+    - If "Pico y Placa" applies at certain time, then the car cannot transit. It can otherwise
+
+
+    - When "Pico y Placa" applies:
+
+        days: Monday, Tuesday, Wednesday, Thursday, Friday
+        hours:  from 07:00 to 09:30
+                from 16:30 to 19:30
+
+        It doesn't apply on holidays and weekends
+
+
+    - Who applies for "Pico y Placa":
+
+        "Pico y Placa" applies for cars and motorcycles
+
+            - License plate number in cars has the form ABC-1234
+            - License plate number in motorcyles has the form AB-123D
+
+
+        Using license plate number's last digit and a week day:
+
+        +-----------------------------------+-----------+
+        | License Plate Number's last digit | Week day  |
+        +-----------------------------------+-----------+
+        |                1,2                | Monday    |
+        |                3,4                | Tuesday   |
+        |                5,6                | Wednesday |
+        |                7,8                | Thursday  |
+        |                9,0                | Friday    |
+        +-----------------------------------+-----------+
+
+
+CONSTRAINTS:
+
+    - License plate number should have a valid format:
+            - License plate number in cars has the form ABC-1234
+            - License plate number in motorcyles has the form AB-123D
+
+    - Date should have a valid format (yyyy-MM-dd)
+    - Date should not be past
+
+    - Time should have a valid format (HH-mm) in 24h
+
+
+
+USER STORIES:
+
+    - User inputs plate number
+        => Number should be valid (assuming anything rather than empty is valid)
+
+    - User inputs date
+        => Date should ve a valid date (should be a string)
+
+    - User inputs time
+        => should be a valid time (24h format?, how separate hours and minutes)
+
+    - When User accepts his/her inputs, app notifies if the car can be on the road
+
